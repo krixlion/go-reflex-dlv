@@ -22,8 +22,6 @@ services:
       - BUILD_ARGS=cmd/main.go
     volumes:
       - .:/app
-    networks:
-      - dev-form
     ports:
       - 8080:80
       # debug port
