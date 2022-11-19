@@ -12,4 +12,4 @@ VOLUME /go
 
 EXPOSE 2345
 
-CMD ["reflex", "-d", "none", "-c", "/usr/local/etc/reflex.conf"]
+CMD ["reflex", "-vd", "none", "-c", "/usr/local/etc/reflex.conf"]
