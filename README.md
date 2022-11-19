@@ -7,7 +7,8 @@ BUILD_ARGS - file path \
 RUN_ARGS - flags for compiled binary
 DEBUG_PORT - port on which Delve server will run
 
-
+## Mount
+Container will read everything from `/app` and that's where you should mount your project root. 
 
 ## Examples
 
@@ -15,12 +16,12 @@ DEBUG_PORT - port on which Delve server will run
 ```docker-compose.yml
 services:
 
-  article:
+  service:
     container_name: debug
     image: krixlion/go-reflex-dlv:1.19.3
     environment:
       - BUILD_ARGS=cmd/main.go
-      - RUN_ARGS=-p 50051
+      - RUN_ARGS=-port 8080
       - DEBUG_PORT=2345
     volumes:
       - .:/app
