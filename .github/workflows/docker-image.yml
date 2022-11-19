@@ -18,9 +18,9 @@ jobs:
     - name: Docker login
       run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD}}
       
-    - name: Build and push eventstore service
+    - name: Build and push image
       uses: docker/build-push-action@v3
       with:
-        context: ./eventstore
+        context: ./
         push: true
         tags: ${{ secrets.DOCKER_USER }}/go-reflex-dlv:latest
