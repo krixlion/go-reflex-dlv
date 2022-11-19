@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+        
+    - name: Docker login
+      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD}}
+      
+    - name: Build and push eventstore service
+      uses: docker/build-push-action@v3
+      with:
+        context: ./eventstore
+        push: true
+        tags: ${{ secrets.DOCKER_USER }}/go-reflex-dlv:latest
