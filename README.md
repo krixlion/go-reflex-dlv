@@ -6,6 +6,7 @@ This is the repo for my [docker image](https://hub.docker.com/r/krixlion/go-refl
 BUILD_ARGS - file path \
 RUN_ARGS - flags for compiled binary
 DEBUG_PORT - port on which Delve server will run
+DELVE_ARGS - additional flags for Delve to run with
 
 ## Mount
 Container will read everything from `/app` and that's where you should mount your project root. 
@@ -23,6 +24,7 @@ services:
       - BUILD_ARGS=cmd/main.go
       - RUN_ARGS=-port 8080
       - DEBUG_PORT=2345
+      - DELVE_ARGS=--continue
     volumes:
       - .:/app
     ports:
