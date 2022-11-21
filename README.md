@@ -4,8 +4,8 @@ This is the repo for my [docker image](https://hub.docker.com/r/krixlion/go-refl
 
 ## Environment variables
 BUILD_ARGS - file path \
-RUN_ARGS - flags for compiled binary
-DEBUG_PORT - port on which Delve server will run
+RUN_ARGS - flags for compiled binary \
+DEBUG_PORT - port on which Delve server will run \
 DELVE_ARGS - additional flags for Delve to run with
 
 ## Mount
