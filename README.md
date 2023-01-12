@@ -8,7 +8,7 @@ RUN_ARGS - flags for compiled binary \
 DEBUG_PORT - port on which Delve server will run \
 DELVE_ARGS - additional flags for Delve to run with 
 
-TESTING - if set to `"true"` then delve will launch in debug tests mode and run tests located in provided filepath \
+TESTING - if set to `"true"` then delve will launch in debug tests mode and run tests from provided package path \
 TEST_PATH - path to the test file
 
 ## Mount
@@ -43,8 +43,8 @@ services:
     container_name: debug
     image: krixlion/go-reflex-dlv:1.19.3
     environment:
-      - TESTING="yes"
-      - TEST_PATH=pkg/hello/hello_test.go
+      - TESTING="true"
+      - TEST_PATH=github.com/krixlion/dev-forum_article/event
       - DEBUG_PORT=2345
       - DELVE_ARGS=--continue
     volumes:
