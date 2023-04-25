@@ -1,4 +1,4 @@
-FROM golang:1.19.3
+FROM golang:1.20.3
 
 RUN go install github.com/cespare/reflex@latest
 RUN go install github.com/go-delve/delve/cmd/dlv@latest
