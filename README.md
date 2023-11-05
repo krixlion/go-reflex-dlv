@@ -8,7 +8,7 @@ RUN_ARGS - flags for compiled binary \
 DEBUG_PORT - port on which Delve server will run \
 DELVE_ARGS - additional flags for Delve to run with 
 
-TESTING - if set to `"true"` then delve will launch in debug tests mode and run tests from provided package path \
+TESTING - if set to `"true"` then delve will launch in test debugging mode and will run tests from provided package path \
 TEST_PATH - path to the test file
 
 ## Mount
